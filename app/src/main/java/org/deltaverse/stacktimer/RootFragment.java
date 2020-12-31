@@ -13,7 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
+
 import org.deltaverse.stacktimer.databinding.RootFragmentBinding;
+
+import java.util.ArrayList;
 
 public class RootFragment extends Fragment {
 
@@ -31,6 +35,14 @@ public class RootFragment extends Fragment {
         binding.getRoot().setOnClickListener(view -> {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_rootFragment2_to_aboutFragment2);
         });
+
+        binding.cardStackView.setLayoutManager(new CardStackLayoutManager(getContext()));
+        ArrayList<DataObject> dataObjects = new ArrayList<>();
+        dataObjects.add(new DataObject("sai"));
+        dataObjects.add(new DataObject("phani"));
+        dataObjects.add(new DataObject("aditya"));
+        dataObjects.add(new DataObject("jagatha"));
+        binding.cardStackView.setAdapter(new CardStackAdapter(dataObjects, getContext()));
         return binding.getRoot();
     }
 
