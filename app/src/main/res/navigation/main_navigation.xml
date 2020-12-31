@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/rootFragment2">
+    <fragment
+        android:id="@+id/rootFragment2"
+        android:name="org.deltaverse.stacktimer.RootFragment"
+        android:label="root_fragment"
+        tools:layout="@layout/root_fragment" >
+        <action
+            android:id="@+id/action_rootFragment2_to_aboutFragment2"
+            app:destination="@id/aboutFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment2"
+        android:name="org.deltaverse.stacktimer.AboutFragment"
+        android:label="about_fragment"
+        tools:layout="@layout/about_fragment" />
+</navigation>
