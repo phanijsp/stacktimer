@@ -1,12 +1,15 @@
 package org.deltaverse.stacktimer;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -29,8 +32,12 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         DataObject dataObject = dataObjects.get(position);
-        TextView textView = holder.itemView.findViewById(R.id.testLayoutText);
-        textView.setText(dataObject.name);
+        ImageView textView = holder.itemView.findViewById(R.id.test_image);
+        TextView textView1 = holder.itemView.findViewById(R.id.textCard);
+        textView1.setText(dataObject.name);
+        ConstraintLayout constraintLayout = holder.itemView.findViewById(R.id.rootCardBackground);
+        int[] colors = new int[]{Color.GRAY, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN};
+        constraintLayout.setBackgroundColor(colors[position]);
     }
 
     @Override
