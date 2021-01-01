@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
+import com.yuyakaido.android.cardstackview.StackFrom;
 
 import org.deltaverse.stacktimer.databinding.RootFragmentBinding;
 
@@ -23,6 +24,7 @@ public class RootFragment extends Fragment {
 
     private RootViewModel mViewModel;
     private RootFragmentBinding binding;
+    private CardStackLayoutManager cardStackLayoutManager;
 
     public static RootFragment newInstance() {
         return new RootFragment();
@@ -36,7 +38,10 @@ public class RootFragment extends Fragment {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_rootFragment2_to_aboutFragment2);
         });
 
-        binding.cardStackView.setLayoutManager(new CardStackLayoutManager(getContext()));
+        cardStackLayoutManager = new CardStackLayoutManager(getContext());
+        cardStackLayoutManager.setVisibleCount(3);
+        cardStackLayoutManager.setStackFrom(StackFrom.Bottom);
+        binding.cardStackView.setLayoutManager(cardStackLayoutManager);
         ArrayList<DataObject> dataObjects = new ArrayList<>();
         dataObjects.add(new DataObject("sai"));
         dataObjects.add(new DataObject("phani"));
