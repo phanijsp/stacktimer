@@ -50,8 +50,9 @@ public class RootFragment extends Fragment implements CardStackListener {
 
         cardStackLayoutManager = new CardStackLayoutManager(this.getContext(), this);
         cardStackAdapter = new CardStackAdapter(dataObjects, getContext());
-        cardStackLayoutManager.setVisibleCount(3);
+        cardStackLayoutManager.setVisibleCount(4);
         cardStackLayoutManager.setStackFrom(StackFrom.Bottom);
+        cardStackLayoutManager.setTranslationInterval(12);
         binding.cardStackView.setLayoutManager(cardStackLayoutManager);
         dataObjects.add(new DataObject("sai"));
         dataObjects.add(new DataObject("phani"));
