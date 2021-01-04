@@ -1,7 +1,7 @@
 package org.deltaverse.stacktimer;
 
-public class DataObject {
-    public DataObject(String name){
+public class CardObject {
+    public CardObject(String name){
         this.name = name;
     }
     public String name="";

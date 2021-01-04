@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.ViewHolder> {
-    ArrayList<DataObject> dataObjects = new ArrayList<>();
+    ArrayList<CardObject> dataObjects = new ArrayList<>();
     Context context;
-    public CardStackAdapter(ArrayList<DataObject> dataObjects, Context context){
+    public CardStackAdapter(ArrayList<CardObject> dataObjects, Context context){
         this.dataObjects = dataObjects;
         this.context = context;
     }
@@ -31,7 +31,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        DataObject dataObject = dataObjects.get(position);
+        CardObject dataObject = dataObjects.get(position);
         ImageView textView = holder.itemView.findViewById(R.id.test_image);
         TextView textView1 = holder.itemView.findViewById(R.id.textCard);
         textView1.setText(dataObject.name);

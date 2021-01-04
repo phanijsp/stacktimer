@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,16 +22,15 @@ import com.yuyakaido.android.cardstackview.StackFrom;
 
 import org.deltaverse.stacktimer.databinding.RootFragmentBinding;
 
-import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class RootFragment extends Fragment implements CardStackListener {
 
-    private RootViewModel mViewModel;
     private RootFragmentBinding binding;
     private CardStackLayoutManager cardStackLayoutManager;
     private CardStackAdapter cardStackAdapter;
-    DataObject lastItem;
-    ArrayList<DataObject> dataObjects;
+    RootViewModel rootViewModel;
+    CardObject lastCard;
 
     public static RootFragment newInstance() {
         return new RootFragment();
@@ -46,29 +44,31 @@ public class RootFragment extends Fragment implements CardStackListener {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_rootFragment2_to_aboutFragment2);
         });
 
-        dataObjects = new ArrayList<>();
 
+        rootViewModel = new ViewModelProvider(this).get(RootViewModel.class);
+        rootViewModel.isListEmpty().observe(getActivity(), aBoolean -> {
+            if (!aBoolean) {
+                lastCard = rootViewModel.getCards().getValue().get(0);
+                initCardStackView();
+            }else{
+                rootViewModel.getCards();
+            }
+            Log.i("RootFragment", aBoolean+"");
+        });
+        return binding.getRoot();
+    }
+
+
+    public void initCardStackView() {
         cardStackLayoutManager = new CardStackLayoutManager(this.getContext(), this);
-        cardStackAdapter = new CardStackAdapter(dataObjects, getContext());
+        cardStackAdapter = new CardStackAdapter(rootViewModel.getCards().getValue(), getContext());
         cardStackLayoutManager.setVisibleCount(4);
         cardStackLayoutManager.setStackFrom(StackFrom.Bottom);
         cardStackLayoutManager.setTranslationInterval(12);
         binding.cardStackView.setLayoutManager(cardStackLayoutManager);
-        dataObjects.add(new DataObject("sai"));
-        dataObjects.add(new DataObject("phani"));
-        dataObjects.add(new DataObject("aditya"));
-        dataObjects.add(new DataObject("jagatha"));
-        lastItem = dataObjects.get(0);
         binding.cardStackView.setAdapter(cardStackAdapter);
-        return binding.getRoot();
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(RootViewModel.class);
-        // TODO: Use the ViewModel
-    }
 
     @Override
     public void onCardDragging(Direction direction, float ratio) {
@@ -77,9 +77,9 @@ public class RootFragment extends Fragment implements CardStackListener {
 
     @Override
     public void onCardSwiped(Direction direction) {
-        cardStackAdapter.dataObjects.remove(lastItem);
-        cardStackAdapter.dataObjects.add(lastItem);
-        lastItem = dataObjects.get(0);
+        cardStackAdapter.dataObjects.remove(lastCard);
+        cardStackAdapter.dataObjects.add(lastCard);
+        lastCard = rootViewModel.getCards().getValue().get(0);
         cardStackAdapter.notifyDataSetChanged();
     }
 
