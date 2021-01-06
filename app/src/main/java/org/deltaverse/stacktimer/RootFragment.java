@@ -41,7 +41,7 @@ public class RootFragment extends Fragment implements CardStackListener {
                              @Nullable Bundle savedInstanceState) {
         binding = RootFragmentBinding.inflate(inflater);
         binding.getRoot().setOnClickListener(view -> {
-            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_rootFragment2_to_aboutFragment2);
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_rootFragment2_to_addCardFragment);
         });
 
 
@@ -53,7 +53,6 @@ public class RootFragment extends Fragment implements CardStackListener {
             }else{
                 rootViewModel.getCards();
             }
-            Log.i("RootFragment", aBoolean+"");
         });
         return binding.getRoot();
     }

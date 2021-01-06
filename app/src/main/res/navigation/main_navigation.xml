@@ -12,10 +12,18 @@
         <action
             android:id="@+id/action_rootFragment2_to_aboutFragment2"
             app:destination="@id/aboutFragment2" />
+        <action
+            android:id="@+id/action_rootFragment2_to_addCardFragment"
+            app:destination="@id/addCardFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment2"
         android:name="org.deltaverse.stacktimer.AboutFragment"
         android:label="about_fragment"
         tools:layout="@layout/about_fragment" />
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="org.deltaverse.stacktimer.AddCardFragment"
+        android:label="fragment_add_card"
+        tools:layout="@layout/fragment_add_card" />
 </navigation>

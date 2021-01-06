@@ -1,7 +1,5 @@
 package org.deltaverse.stacktimer;
 
-import android.os.Handler;
-import android.os.Looper;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -26,15 +24,16 @@ public class RootViewModel extends ViewModel {
 
     private void loadCards() {
         ArrayList<CardObject> cardObjects = new ArrayList<>();
-        cardObjects.add(new CardObject("Sai"));
-        cardObjects.add(new CardObject("sai"));
-        cardObjects.add(new CardObject("phani"));
-        cardObjects.add(new CardObject("aditya"));
-        cardObjects.add(new CardObject("jagatha"));
-        if(cardObjects.size()>0){
+        cardObjectsLive.setValue(cardObjects);
+
+//        cardObjects.add(new CardObject("Sai"));
+//        cardObjects.add(new CardObject("sai"));
+//        cardObjects.add(new CardObject("phani"));
+//        cardObjects.add(new CardObject("aditya"));
+//        cardObjects.add(new CardObject("jagatha"));
+        if (cardObjects.size() > 0) {
             listEmpty.setValue(false);
         }
-        cardObjectsLive.setValue(cardObjects);
     }
 
     public LiveData<Boolean> isListEmpty() {

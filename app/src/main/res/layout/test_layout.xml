@@ -31,7 +31,139 @@
                     android:scaleType="centerCrop"
                     />
                 <TextView
+                    android:paddingStart="9dp"
+                    android:paddingTop="9dp"
+                    android:id="@+id/cardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Card Title"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <TextView
+                    android:id="@+id/cardCaption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="9dp"
+
+                    android:text="Card Caption"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    app:layout_constraintTop_toBottomOf="@id/cardTitle"
+                    app:layout_constraintStart_toStartOf="@id/cardTitle"/>
+                <TextView
+                    android:id="@+id/cardEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="27-05-1999"
+                    android:padding="9dp"
+
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/cardTimerHrs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cardTimerSeparatorHrsMin"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="hours"
+                    android:textAlignment="textEnd"
+                    android:paddingEnd="11dp"
+                    app:layout_constraintStart_toStartOf="@id/cardTimerHrs"
+                    app:layout_constraintTop_toBottomOf="@id/cardTimerHrs"
+                    app:layout_constraintEnd_toEndOf="@id/cardTimerHrs"/>
+                <TextView
+                    android:id="@+id/cardTimerSeparatorHrsMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cardTimerHrs"
+                    app:layout_constraintEnd_toStartOf="@id/cardTimerMin"
+                    />
+                <TextView
+                    android:id="@+id/cardTimerMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cardTimerSeparatorHrsMin"
+                    app:layout_constraintEnd_toStartOf="@id/cardTimerSeparatorMinSec"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="minutes"
+                    android:textAlignment="textEnd"
+                    android:paddingEnd="11dp"
+                    app:layout_constraintStart_toStartOf="@id/cardTimerMin"
+                    app:layout_constraintTop_toBottomOf="@id/cardTimerMin"
+                    app:layout_constraintEnd_toEndOf="@id/cardTimerMin"/>
+                <TextView
+                    android:id="@+id/cardTimerSeparatorMinSec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cardTimerMin"
+                    app:layout_constraintEnd_toStartOf="@id/cardTimerSec"
+                    />
+                <TextView
+                    android:id="@+id/cardTimerSec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cardTimerSeparatorMinSec"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="seconds"
+                    android:textAlignment="textEnd"
+                    android:paddingEnd="11dp"
+                    app:layout_constraintStart_toStartOf="@id/cardTimerSec"
+                    app:layout_constraintTop_toBottomOf="@id/cardTimerSec"
+                    app:layout_constraintEnd_toEndOf="@id/cardTimerSec"/>
+                <TextView
+                    android:id="@+id/cardAddedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="added on 27-05-1999"
+                    android:padding="9dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+                <TextView
                     android:id="@+id/textCard"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"

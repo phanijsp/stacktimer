@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AddCardFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/closeAddCard"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="12dp"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/ic_round_close_24"/>
+            <TextView
+                android:id="@+id/addCardHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Card"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@id/closeAddCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/closeAddCard"
+                android:padding="6dp" />
+            <ImageView
+                android:id="@+id/finishAddCard"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="12dp"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/ic_round_done_24"/>
+            <ImageView
+                android:id="@+id/titleLogoAddCard"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/titleAddCard"
+                app:layout_constraintBottom_toBottomOf="@id/titleAddCard"
+                android:src="@drawable/ic_baseline_title_24"
+                app:tint="#808080" />
+            <EditText
+                android:id="@+id/titleAddCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Card Title"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintTop_toBottomOf="@id/datePickerAddCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/titleLogoAddCard"/>
+            <ImageView
+                android:id="@+id/captionLogoAddCard"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/captionAddCard"
+                app:layout_constraintBottom_toBottomOf="@id/captionAddCard"
+                android:src="@drawable/ic_baseline_closed_caption_24"
+                app:tint="#808080"/>
+            <EditText
+                android:id="@+id/captionAddCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Card Caption"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintTop_toBottomOf="@id/titleAddCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/titleLogoAddCard"/>
+
+            <LinearLayout
+                android:id="@+id/datePickerAddCard"
+                app:layout_constraintStart_toEndOf="@id/datePickerLogoAddCard"
+                app:layout_constraintTop_toBottomOf="@id/closeAddCard"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="36dp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TimePicker
+                    android:id="@+id/timePickerAddCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleY="0.69"
+                    android:scaleX="0.69"
+                    android:layout_marginTop="-36dp"
+                    android:layout_marginBottom="-36dp"
+                    android:layout_marginStart="-48dp"
+                    android:layout_marginEnd="-36dp"
+                    android:timePickerMode="spinner"
+
+                    />
+                <DatePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleY="0.69"
+                    android:scaleX="0.69"
+                    android:layout_marginTop="-36dp"
+                    android:layout_marginBottom="-36dp"
+                    android:layout_marginStart="-36dp"
+                    android:layout_marginEnd="-36dp"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                     />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/datePickerLogoAddCard"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="12dp"
+                android:src="@drawable/ic_baseline_date_range_24"
+                app:layout_constraintBottom_toBottomOf="@+id/datePickerAddCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/datePickerAddCard"
+                app:tint="#808080" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
