@@ -1,6 +1,8 @@
 package org.deltaverse.stacktimer;
 
 
+import android.graphics.Color;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -24,13 +26,20 @@ public class RootViewModel extends ViewModel {
 
     private void loadCards() {
         ArrayList<CardObject> cardObjects = new ArrayList<>();
-        cardObjectsLive.setValue(cardObjects);
 
-//        cardObjects.add(new CardObject("Sai"));
+        cardObjects.add(new CardObject("Sai","","","", Color.GRAY));
+        cardObjects.add(new CardObject("Sa1i","","","", Color.GREEN));
+
+        cardObjects.add(new CardObject("Sai2","","","", Color.CYAN));
+
+        cardObjects.add(new CardObject("Sai3","","","", Color.BLUE));
+
 //        cardObjects.add(new CardObject("sai"));
 //        cardObjects.add(new CardObject("phani"));
 //        cardObjects.add(new CardObject("aditya"));
 //        cardObjects.add(new CardObject("jagatha"));
+        cardObjectsLive.setValue(cardObjects);
+
         if (cardObjects.size() > 0) {
             listEmpty.setValue(false);
         }

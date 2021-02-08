@@ -33,11 +33,11 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CardObject dataObject = dataObjects.get(position);
         ImageView textView = holder.itemView.findViewById(R.id.test_image);
-        TextView textView1 = holder.itemView.findViewById(R.id.textCard);
-//        textView1.setText(dataObject.name);
+        TextView textView1 = holder.itemView.findViewById(R.id.cardTitle);
+        textView1.setText(dataObject.getCardTitle());
         ConstraintLayout constraintLayout = holder.itemView.findViewById(R.id.rootCardBackground);
         int[] colors = new int[]{Color.GRAY, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN,Color.BLACK, Color.BLUE, Color.YELLOW, Color.CYAN};
-        constraintLayout.setBackgroundColor(colors[position]);
+        constraintLayout.setBackgroundColor(dataObject.getCardColor());
     }
 
     @Override

@@ -25,5 +25,9 @@
         android:id="@+id/addCardFragment"
         android:name="org.deltaverse.stacktimer.AddCardFragment"
         android:label="fragment_add_card"
-        tools:layout="@layout/fragment_add_card" />
+        tools:layout="@layout/fragment_add_card" >
+        <action
+            android:id="@+id/action_addCardFragment_to_rootFragment2"
+            app:destination="@id/rootFragment2" />
+    </fragment>
 </navigation>

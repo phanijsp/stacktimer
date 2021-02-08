@@ -40,7 +40,7 @@ public class RootFragment extends Fragment implements CardStackListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = RootFragmentBinding.inflate(inflater);
-        binding.getRoot().setOnClickListener(view -> {
+        binding.addCardIcon.setOnClickListener(view -> {
             Navigation.findNavController(binding.getRoot()).navigate(R.id.action_rootFragment2_to_addCardFragment);
         });
 

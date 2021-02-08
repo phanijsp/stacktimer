@@ -1,17 +1,25 @@
 package org.deltaverse.stacktimer;
 
+import android.graphics.Color;
+
 public class CardObject {
 
     private String cardTitle;
     private String cardCaption;
     private String cardAddedDate;
     private String cardEndDate;
+    private int cardColor;
 
-    public CardObject(String cardTitle, String cardCaption, String cardAddedDate, String cardEndDate) {
+    public CardObject(String cardTitle, String cardCaption, String cardAddedDate, String cardEndDate, int cardColor) {
         this.cardTitle = cardTitle;
         this.cardCaption = cardCaption;
         this.cardAddedDate = cardAddedDate;
         this.cardEndDate = cardEndDate;
+        this.cardColor = cardColor;
+    }
+
+    public int getCardColor() {
+        return cardColor;
     }
 
     public String getCardTitle() {
