@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        
         app:layout_constraintEnd_toEndOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -60,6 +61,14 @@
                 android:layout_height="wrap_content"
                 android:hint="Card Title"
                 android:layout_marginTop="36dp"
+                android:textColor="@color/white"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:nextFocusForward="@id/captionAddCard"
+                android:textColorHint="#60ffffff"
+                android:background="@drawable/date_picker_background"
+                android:padding="8dp"
                 android:layout_marginStart="12dp"
                 app:layout_constraintTop_toBottomOf="@id/timePickerAddCard"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,8 +88,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="Card Caption"
+                android:textColor="@color/white"
+                android:inputType="text"
+                android:textColorHint="#60ffffff"
                 android:layout_marginTop="36dp"
+                android:background="@drawable/date_picker_background"
+                android:padding="8dp"
                 android:layout_marginStart="12dp"
+                android:layout_marginBottom="36dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/titleAddCard"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/titleLogoAddCard"/>
@@ -139,6 +155,15 @@
                 android:layout_marginTop="36dp"
                 android:orientation="horizontal"
                 android:layout_height="wrap_content">
+                <TimePicker
+                    android:id="@+id/timePickerCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/date_picker_background"
+                    android:numbersTextColor="@color/white"
+                    android:timePickerMode="spinner"
+                    android:theme="@style/timePicker"
+                    />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

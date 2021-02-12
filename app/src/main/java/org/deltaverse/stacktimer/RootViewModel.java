@@ -27,12 +27,12 @@ public class RootViewModel extends ViewModel {
     private void loadCards() {
         ArrayList<CardObject> cardObjects = new ArrayList<>();
 
-        cardObjects.add(new CardObject("Sai","","","", Color.GRAY));
-        cardObjects.add(new CardObject("Sa1i","","","", Color.GREEN));
+        cardObjects.add(new CardObject("Sai","sdfsdf","adsdaszd","dasdasd", Color.GRAY));
+        cardObjects.add(new CardObject("Sa1i","dasdas","dasdas","dasda", Color.GREEN));
 
-        cardObjects.add(new CardObject("Sai2","","","", Color.CYAN));
+        cardObjects.add(new CardObject("Sai2","adasq","dasdaed","dasda", Color.CYAN));
 
-        cardObjects.add(new CardObject("Sai3","","","", Color.BLUE));
+        cardObjects.add(new CardObject("Sai3","dgad","asdwdas","dgsdfsdcf", Color.BLUE));
 
 //        cardObjects.add(new CardObject("sai"));
 //        cardObjects.add(new CardObject("phani"));
