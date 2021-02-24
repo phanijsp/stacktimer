@@ -1,4 +1,4 @@
-package org.deltaverse.stacktimer;
+package org.deltaverse.stacktimer.fragments;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -9,20 +9,20 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
 import com.yuyakaido.android.cardstackview.Direction;
 import com.yuyakaido.android.cardstackview.StackFrom;
 
+import org.deltaverse.stacktimer.beans.CardObject;
+import org.deltaverse.stacktimer.adapters.CardStackAdapter;
+import org.deltaverse.stacktimer.R;
+import org.deltaverse.stacktimer.models.RootViewModel;
 import org.deltaverse.stacktimer.databinding.RootFragmentBinding;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class RootFragment extends Fragment implements CardStackListener {
 

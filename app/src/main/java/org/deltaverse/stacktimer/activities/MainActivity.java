@@ -1,4 +1,4 @@
-package org.deltaverse.stacktimer;
+package org.deltaverse.stacktimer.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package org.deltaverse.stacktimer;
+package org.deltaverse.stacktimer.models;
 
 
 import android.graphics.Color;
@@ -6,6 +6,8 @@ import android.graphics.Color;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import org.deltaverse.stacktimer.beans.CardObject;
 
 import java.util.ArrayList;
 

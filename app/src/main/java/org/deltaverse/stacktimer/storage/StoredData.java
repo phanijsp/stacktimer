@@ -3,7 +3,7 @@ package org.deltaverse.stacktimer.storage;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import org.deltaverse.stacktimer.CardObject;
+import org.deltaverse.stacktimer.beans.CardObject;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

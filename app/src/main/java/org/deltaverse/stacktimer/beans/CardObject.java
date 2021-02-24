@@ -1,4 +1,4 @@
-package org.deltaverse.stacktimer;
+package org.deltaverse.stacktimer.beans;
 
 import android.graphics.Color;
 

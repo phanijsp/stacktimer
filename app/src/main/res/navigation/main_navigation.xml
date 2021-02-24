@@ -6,7 +6,7 @@
     app:startDestination="@id/rootFragment2">
     <fragment
         android:id="@+id/rootFragment2"
-        android:name="org.deltaverse.stacktimer.RootFragment"
+        android:name="org.deltaverse.stacktimer.fragments.RootFragment"
         android:label="root_fragment"
         tools:layout="@layout/root_fragment" >
         <action
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment2"
-        android:name="org.deltaverse.stacktimer.AboutFragment"
+        android:name="org.deltaverse.stacktimer.fragments.AboutFragment"
         android:label="about_fragment"
         tools:layout="@layout/about_fragment" />
     <fragment
         android:id="@+id/addCardFragment"
-        android:name="org.deltaverse.stacktimer.AddCardFragment"
+        android:name="org.deltaverse.stacktimer.fragments.AddCardFragment"
         android:label="fragment_add_card"
         tools:layout="@layout/fragment_add_card" >
         <action
