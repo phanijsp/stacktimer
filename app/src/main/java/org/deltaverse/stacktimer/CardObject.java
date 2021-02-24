@@ -2,7 +2,9 @@ package org.deltaverse.stacktimer;
 
 import android.graphics.Color;
 
-public class CardObject {
+import java.io.Serializable;
+
+public class CardObject implements Serializable {
 
     private String cardTitle;
     private String cardCaption;

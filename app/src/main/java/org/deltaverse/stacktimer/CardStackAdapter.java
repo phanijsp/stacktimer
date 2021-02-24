@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -35,6 +36,13 @@ public class CardStackAdapter extends RecyclerView.Adapter<CardStackAdapter.View
         CardObject dataObject = dataObjects.get(position);
         TextView cardTitle = holder.binding.cardTitle;
         TextView cardCaption = holder.binding.cardCaption;
+        holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, cardTitle.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         cardTitle.setText(dataObject.getCardTitle());
         cardCaption.setText(dataObject.getCardCaption());
         ConstraintLayout constraintLayout = holder.itemView.findViewById(R.id.rootCardBackground);
